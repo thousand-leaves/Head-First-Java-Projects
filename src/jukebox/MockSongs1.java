@@ -2,7 +2,7 @@ package jukebox;
 
 import java.util.*;
 
-public class MockSongs {
+public class MockSongs1 {
 
 	public static List<String> getSongStrings() {
 		
@@ -15,4 +15,5 @@ public class MockSongs {
 		songs.add("50 ways");
 		return songs;
 	}
+	
 }
