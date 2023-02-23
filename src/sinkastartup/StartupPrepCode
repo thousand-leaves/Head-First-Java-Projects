@@ -1,0 +1,45 @@
+|----------------------------------|
+|class Startup					   |
+|----------------------------------|
+|ArrayList<String> locationCells   |
+|String name					   |
+|----------------------------------|
+|void setLocationCells()		   |
+|void setName()					   |
+|String checkYourself()			   |
+|----------------------------------|
+
+VARIABLE DECLARATIONS:
+DECLARE an ArrayList of type <String> "locationCells"
+DECLARE a String variable "name" which will hold the name of each startup object
+
+METHOD DECLARATIONS:
+DECLARE a "setName()" method
+DECLARE a "setLocationCells()" method that takes an ArrayList<String> and sets the locations of the startups
+DECLARE a "checkYourself()" method which takes the userInput as a String, checks the user guess and returns a result of "hit", "miss" or "kill"
+
+METHOD IMPLEMENTATIONS:
+
+METHOD: void setName(String n)
+	ASSIGN n parameter to name variable
+END METHOD
+
+METHOD: void setLocationCells(ArrayList<String> loc)
+	GET the cell locations as an ArrayList parameter
+	ASSIGN locations (provided by GameHelper placeStartup() method) to the cell locations instance variable			
+END METHOD 
+
+METHOD: String checkYourself(String userInput)
+	GET the user guess as a String parameter
+	-- REPEAT with each of the remaining location cells	 
+	|	// COMPARE the user guess to the location cell
+	|	-- IF the userGuess matches
+	|	|		REMOVE this cell from the array
+	|	|		// FIND OUT if last location cell:
+	|	|		--IF array is now empty: RETURN "kill"
+	|	|		| ELSE: RETURN "hit"
+	|	|		--END IF
+	|	|  ELSE: RETURN "miss"	
+	|	-- END IF
+	-- END REPEAT
+END METHOD

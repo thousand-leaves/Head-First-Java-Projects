@@ -1,0 +1,71 @@
+------------------
+class StartupBust
+------------------
+GameHelper helper
+ArrayList startups
+int numOfGuesses
+------------------
+setupGame()
+startPlaying()
+checkUserGuess()
+finishGame()
+------------------
+
+===============================================================================
+
+VARIABLE DECLARATIONS
+DECLARE and instantiate the GameHelper instance variable "helper"
+DECLARE and instantiate an ArrayList to hold the list of "startups" (3)
+DECLARE "numOfGuesses" int variable and set to 0
+
+===============================================================================
+
+METHOD DECLARATIONS
+DECLARE a setupGame() method to create and initialize the Startup objects with names and locations
+DECLARE a startPlaying() method that prompts the user for a guess and collects input from the command line. Call the checkUserGuess() method until all startups are gone
+DECLARE a checkUserGuess() method that loops through remaining startups and calls each startup objects checkYourself() method
+DECLARE a finishGame() method that gives the user a score 
+
+===============================================================================
+
+METHOD IMPLEMENTATIONS
+
+METHOD: void setupGame()
+	// Make three startup objects and name them
+	CREATE three startup objects
+	SET a name for each startup
+	ADD the Startups to the startups ArrayList
+	REPEAT with each of the startup objects in the list:
+	|	CALL the placeStartup() method on the helper object to get a randomly 	|	selected location for the startup
+	|	SET the location 
+	END REPEAT
+END METHOD 
+
+METHOD: void startPlaying()
+	REPEAT while any startups exist
+	|	GET user input by calling the helper getUserInput() method
+	|	EVALUATE the users guess by checkUserGuess() method
+	END REPEAT
+END METHOD
+
+METHOD: void checkUserGuess()
+	// find out if there's a hit (and kill) on any startup
+	SET the local variable result to "miss"
+	REPEAT for each of the startups in the list
+	|	EVALUATE the users guess by calling the Startup objects checkYourself() 	|	method
+	|	SET the result to "hit" or "kill" if appropriate
+	|	IF the result is "kill" remove the Startup from the list
+	END REPEAT
+	DISPLAY the result to the user
+END METHOD
+
+METHOD: void finishGame()
+	DISPLAY a game over message
+		IF numOfGuess small
+			DISPLAY congratulations message
+		ELSE
+			DISPLAY insulting message
+		END IF
+END METHOD
+
+===============================================================================
