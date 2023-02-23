@@ -1,0 +1,30 @@
+DECLARE an int array "locationcells"
+DECLARE an int "numberofhits" set to 0
+
+-----------------------------------------------------
+
+DECLARE a "checkyourself()" method that takes an int for user guess, checks it and returns a result "hit", "miss" or "kill"
+
+DECLARE a "setLocationCells()" method that takes an int array of the three locations as ints
+
+----------------------------------------------------
+
+METHOD: String checkYourself(userGuess)
+	GET the user guess as an int parameter
+	-- REPEAT with each loc cell in the int array
+	|	// COMPARE user guess to location cell
+	|	-- IF the userGuess matches
+	|	|		INCREMENT numberOfHits
+	|	|		// FIND OUT if last location cell:
+	|	|		--IF numberOfHits is 3: return "kill"
+	|	|		| ELSE: return "hit"
+	|	|		--END IF
+	|	|  ELSE: return "miss"	
+	|	-- END IF
+	-- END REPEAT
+END METHOD
+
+METHOD: void setLocationCells(int[] cellLocations)
+	GET the cell locations as an int array parameter
+	ASSIGN the cell locations parameter to the cell locations instance variable			
+END METHOD 

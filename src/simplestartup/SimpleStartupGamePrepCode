@@ -1,0 +1,23 @@
+MAIN METHOD
+	DECLARE an int variable "numOfGuesses"
+	MAKE a new SimpleStartup instance
+	COMPUTE a random number between 0-4 (starting cell location)
+	MAKE an int array with 3 consecutive ints using the random number as starting position 
+	INVOKE the setLocationCells method on the instance
+	DECLARE a boolean variable "isAlive" set to true
+	
+--------------------------------------------------------------------------------	
+	
+	WHILE the startup is alive (isAlive == true):
+		GET user input from the command line
+		// Check the user input
+		INVOKE the checkYourself method on the instance
+		INCREMENT numOfGuesses
+		// Check for startup death
+		IF result is "kill"
+			SET isAlive to false
+			END game
+			PRINT numOfGuesses
+		END IF
+	END WHILE
+END METHOD
