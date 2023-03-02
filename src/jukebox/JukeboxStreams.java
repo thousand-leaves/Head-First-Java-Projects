@@ -1,6 +1,7 @@
 package jukebox;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class JukeboxStreams {
@@ -36,6 +37,24 @@ public class JukeboxStreams {
 								   .filter(artist -> !artist.equals("The Beatles"))
 								   .collect(Collectors.toList());
 		System.out.println("Versions of With a Little Help from My Friends: " + result);
+		
+		// Check if something exists
+		boolean checkExists = songs.stream()
+							  .anyMatch(s -> s.getGenre().equals("R&B"));
+		if (checkExists) System.out.println("True");
+
+		// Find a specific thing
+		Optional<Song> specificResult = songs.stream()
+									 .filter(s -> s.getYear() == 1995)
+									 .findFirst();
+		System.out.println("Song from 1995: " + specificResult);
+		
+		// Count the items
+		long uniqueArtists = songs.stream()
+								  .map(Song::getArtist)
+								  .distinct()
+								  .count();
+		System.out.println("Unique artists: " + uniqueArtists);
 								   
 		
 	}
