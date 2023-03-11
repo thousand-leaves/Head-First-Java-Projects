@@ -60,7 +60,7 @@ public class QuizCardBuilder {
 		return scroller;
 	}
 	
-	private JTextArea createTestArea(Font font) {
+	private JTextArea createTextArea(Font font) {
 		JTextArea textArea = new JTextArea(6, 20);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
@@ -107,26 +107,3 @@ public class QuizCardBuilder {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
